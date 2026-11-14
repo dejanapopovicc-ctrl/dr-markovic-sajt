@@ -204,7 +204,7 @@ footer p{color:var(--mute);font-size:15px;margin:12px 0}
  .dd-menu{display:block;position:static;border:0;background:none;padding:0 0 0 14px;min-width:0}
  .soc-m{display:flex}
  .subhero .arch{display:none}
- .numerals b{font-size:46px}
+ .numerals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.numerals b{font-size:40px}.numerals span{font-size:12px}
  .dock{left:0;right:0;bottom:0;background:var(--ink);padding:8px 10px;gap:8px}
  .dock a{flex:1;justify-content:center;color:#fff;padding:9px 6px;font-size:13px}
  .dock .d-call{background:var(--acc)}
