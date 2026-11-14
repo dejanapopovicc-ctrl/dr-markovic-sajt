@@ -313,3 +313,16 @@ footer .soc a:hover,.soc a:hover{background:var(--cyan);color:var(--navy);border
 .proof .hl b,.proof .hl b span{font-size:2.1rem}
 .shd{color:var(--cyan);margin:0 auto 4px;display:block;flex:none}
 @media(max-width:520px){.proof .hl b,.proof .hl b span{font-size:1.7rem}}
+
+/* v7: urađeni radovi */
+.works{background:#fff;padding:70px 0 56px}
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;gap:16px;margin-top:40px}
+.wgrid a{display:block;color:inherit}
+.wgrid figure{position:relative;margin:0;border-radius:20px;overflow:hidden;height:100%;background:var(--navy)}
+.wgrid img{width:100%;height:100%;min-height:300px;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .5s}
+.wgrid a:hover img{transform:scale(1.05)}
+.wgrid figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(11,31,47,.9));color:#fff}
+.wgrid figcaption b{display:block;font:700 1rem var(--heading)}
+.wgrid figcaption span{font-size:.84rem;color:#bcd0dc}
+.wnote{text-align:center;font-size:.82rem;color:#6b8394;margin-top:18px}
+@media(max-width:980px){.wgrid{grid-template-columns:repeat(2,1fr)}.wgrid img{min-height:220px}}
