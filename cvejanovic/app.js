@@ -20,8 +20,9 @@
   if(bg)bg.addEventListener('click',function(){links.classList.toggle('open')});
 
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -30px 0px'});
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})},2500);
   }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
 
   var f=document.getElementById('exam');
