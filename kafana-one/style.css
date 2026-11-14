@@ -76,3 +76,12 @@ nav{display:none;position:absolute;left:0;right:0;top:70px;background:var(--g2);
 html.js .ans{display:none}html.js .ans.on{display:block;border-top:0}
 .btn-g{background:var(--g2);color:var(--cr)}.btn-g:hover{background:#0f1c16}
 @media(max-width:860px){.pick{padding:56px 0}.chips button{padding:12px 18px;font-size:16px}.answers{min-height:140px}}
+
+#jelovnik{background:#fff}
+.menu{margin-top:40px;background:#fffaf0;border:1px solid #d8c9a8;outline:6px solid var(--cr);outline-offset:-14px;padding:44px 48px;columns:2;column-gap:64px}
+.mcat{break-inside:avoid;margin-bottom:30px}
+.mcat h3{font-family:var(--hd);font-style:italic;font-size:26px;color:var(--bk);margin-bottom:10px;border-bottom:1px solid #d8c9a8;padding-bottom:6px}
+.mcat ul{list-style:none;padding:0}.mcat li{padding:8px 0}
+.mcat li b{font-family:var(--hd);font-size:19px;font-weight:700;color:var(--ink);display:block}
+.mcat li p{font-size:15px;color:#6b6155;margin-top:2px}
+@media(max-width:860px){.menu{columns:1;padding:28px 22px}}
