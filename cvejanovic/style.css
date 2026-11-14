@@ -326,3 +326,22 @@ footer .soc a:hover,.soc a:hover{background:var(--cyan);color:var(--navy);border
 .wgrid figcaption span{font-size:.84rem;color:#bcd0dc}
 .wnote{text-align:center;font-size:.82rem;color:#6b8394;margin-top:18px}
 @media(max-width:980px){.wgrid{grid-template-columns:repeat(2,1fr)}.wgrid img{min-height:220px}}
+
+/* v8: bento raspored radova */
+.wgrid{grid-template-columns:repeat(4,1fr);grid-template-rows:240px 240px;gap:16px}
+.wgrid a{position:relative;display:block;min-height:0}
+.wgrid .w0{grid-column:1/3;grid-row:1/3}
+.wgrid .w1{grid-column:3;grid-row:1/3}
+.wgrid .w2{grid-column:4;grid-row:1}
+.wgrid .w3{grid-column:4;grid-row:2}
+.wgrid figure{position:absolute;inset:0;height:auto}
+.wgrid img{position:absolute;inset:0;width:100%;height:100%;min-height:0;aspect-ratio:auto}
+.wgrid figcaption b{display:block}.wgrid figcaption span{display:block}
+@media(max-width:980px){
+ .wgrid{grid-template-columns:1fr 1fr;grid-template-rows:260px 200px 200px}
+ .wgrid .w0{grid-column:1/3;grid-row:1}
+ .wgrid .w1{grid-column:1;grid-row:2}
+ .wgrid .w2{grid-column:2;grid-row:2}
+ .wgrid .w3{grid-column:1/3;grid-row:3}
+}
+@media(max-width:520px){.wgrid figcaption{padding:30px 12px 12px}.wgrid figcaption b{font-size:.9rem}.wgrid figcaption span{font-size:.78rem}}
