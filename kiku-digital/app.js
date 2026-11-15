@@ -40,3 +40,5 @@
   if(td)td.addEventListener('click',function(){var bw=board.clientWidth,cw=wins[0].offsetWidth,gap=(bw-3*cw)/2;
     place(function(w,i){return {l:(i%3)*(cw+gap),t:Math.floor(i/3)*(w.offsetHeight+50)+10,r:0}})});
 })();
+(function(){var p=document.getElementById('phwrap');if(!p||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(es){es.forEach(function(e){p.classList.toggle('paused',!e.isIntersecting)})},{threshold:0}).observe(p)})();
