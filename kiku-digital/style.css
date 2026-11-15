@@ -107,3 +107,18 @@ footer .big{overflow:hidden;padding-bottom:10px}
 .wm{font:700 clamp(60px,14vw,200px)/1 var(--hd);letter-spacing:-.05em;color:var(--bg)}.wm i{color:var(--ac);font-style:normal}
 footer{padding-top:30px}
 @media(max-width:768px){.sol .sv{grid-template-columns:1fr}.fb li{grid-template-columns:1fr;gap:6px}.fb .ar{display:none}.facts li{grid-template-columns:90px 1fr}.phone{justify-self:start}h1{max-width:none}}
+/* messenger buttons */
+.msg{display:inline-block;font:700 15px var(--mo);text-transform:uppercase;text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:12px 20px;transition:transform .12s,box-shadow .12s}
+.msg:hover{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.msg.wa{background:#25d366}.msg.vb{background:#a98bff}.msg.em{background:#fff}
+.msg.big{font-size:19px;padding:18px 30px}
+.ctabtns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta .msg{border-color:var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.fixmsg{position:fixed;right:16px;bottom:16px;z-index:55;display:flex;flex-direction:column;gap:8px;background:var(--bg);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:10px}
+.fixmsg .lbl{font:700 11px var(--mo);text-transform:uppercase;letter-spacing:.06em}
+.fixmsg .msg{box-shadow:none;padding:9px 14px;text-align:center}.fixmsg .msg:hover{transform:none;background:var(--ac);color:#fff}
+@media(max-width:768px){
+ .fixmsg{left:0;right:0;bottom:0;flex-direction:row;align-items:center;border-width:2px 0 0;box-shadow:none;padding:8px;gap:8px}
+ .fixmsg .lbl{display:none}.fixmsg .msg{flex:1;padding:13px 8px}
+ footer{padding-bottom:84px}
+}

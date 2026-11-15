@@ -1,8 +1,12 @@
 (function(){
   var html=document.documentElement;
+  var MSG={sr:'Zdravo, zanima me predlog sajta za moj biznis. Bavim se: ',en:'Hi, I would like a website proposal for my business. What I do: '};
+  function setMsg(l){var m=encodeURIComponent(MSG[l]||MSG.sr);
+    document.querySelectorAll('a.msg.wa').forEach(function(a){a.href=a.href.split('?')[0]+'?text='+m});
+    document.querySelectorAll('a.msg.vb').forEach(function(a){a.href=a.href.split('&draft=')[0]+'&draft='+m})}
   function setLang(l){html.setAttribute('lang',l);try{localStorage.setItem('lang',l)}catch(e){}
     document.querySelectorAll('[data-sr]').forEach(function(el){var v=el.getAttribute('data-'+l);if(v!==null)el.textContent=v});
-    var tt=document.body.getAttribute('data-title-'+l);if(tt)document.title=tt}
+    var tt=document.body.getAttribute('data-title-'+l);if(tt)document.title=tt;setMsg(l)}
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
   setLang(html.getAttribute('lang')||'sr');
   var bg=document.querySelector('.burger'),links=document.getElementById('links');
