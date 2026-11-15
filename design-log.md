@@ -7,3 +7,4 @@
 | vulkanizer-one (one-page) | type-led on safety yellow, giant phone, facts bar | slim black bar, anchors, call button | yellow + black + charcoal | Archivo + Barlow | flat white, 3px border, hard shadow | none, one wide night band | 7-day hours strip, live dot |
 | kafana-one (one-page) | centered type with three tilted photo cards | transparent over hero, solid on scroll | bottle green + brass + cream + brick | Playfair Display + Karla | image-top | none | chalkboard hours with live open line; wow: "Kad ćete doći?" picker band |
 | kafana-v3 | split hero (text + photo), sticky bar nav, cream + one brick accent, Source Serif 4 + Work Sans, outlined 8px cards, no gallery, picker 'Kad da dođem' |
+| kiku-digital | giant wordmark hero, draggable window desk, terminal process, neo-brutalist offset shadows, Space Grotesk + Space Mono, ink/paper + coral + blue |
