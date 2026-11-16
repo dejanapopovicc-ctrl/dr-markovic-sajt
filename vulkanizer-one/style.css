@@ -88,3 +88,5 @@ nav.open{display:flex}.burger{display:block}.callb span{display:none}.bar{gap:12
 .d-call{flex:2;background:var(--y);color:var(--ink)}.d-map{flex:1;color:#fff;border:2px solid #444}
 .band img{aspect-ratio:16/9}.days{gap:4px}.card{box-shadow:6px 6px 0 var(--y)}
 }
+
+.d-t{display:flex;flex-direction:column;line-height:1.15}.d-t em{font-style:normal;font-size:.8em}.d-t b{white-space:nowrap;font-weight:900}
