@@ -55,7 +55,8 @@
   var WD=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var N={S:{mala:'Small',srednja:'Medium',velika:'Large'},St:{linije:'Linework',senke:'Shading',boja:'Color'},C:{jednostavna:'Simple',srednja:'Moderate',detaljna:'Detailed'}};
   var CN={jednostavna:'Clean design, few details, no demanding gradients.',srednja:'More elements or finer detail.',detaljna:'Dense design, lots of small detail or realism.'};
-  var A={marko:{n:'Marko',off:2},ana:{n:'Ana',off:1},luka:{n:'Luka',off:3}};
+  var A={marko:{n:'Marko',off:2,rate:150},ana:{n:'Ana',off:1,rate:180},luka:{n:'Luka',off:3,rate:160}};
+  var MINP=200,DEP=50;
   var BASE={mala:1,srednja:2.5,velika:5},SM={linije:1,senke:1.3,boja:1.6},CM={jednostavna:1,srednja:1.4,detaljna:1.9};
   var OPEN=720,CLOSE=1200,CAP=6,DAYS=14;
   var B={a:'marko',s:'srednja',st:'linije',c:'srednja',d:null,t:null};
@@ -66,6 +67,8 @@
   function total(){return Math.ceil(BASE[B.s]*SM[B.st]*CM[B.c]*2)/2}
   function fmtH(h){return h+(h===1?' hr':' hrs')}
   function tm(m){var h=Math.floor(m/60),mm=m%60,ap=h>=12?'PM':'AM';return (h%12||12)+':'+(mm?mm:'00')+' '+ap}
+  function price(){var lo=Math.max(MINP,Math.round(total()*A[B.a].rate/5)*5),hi=Math.round(lo*1.15/5)*5;return [lo,hi]}
+  function usd(n){return '$'+n.toLocaleString('en-US')}
   function firstLen(){return Math.min(total(),CAP)}
   function today(){
     try{var p=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
@@ -100,18 +103,20 @@
     else{var sl=slotsFor(cur);if(sl.indexOf(B.t)<0)B.t=null;
       sl.forEach(function(m){var b=document.createElement('button');b.type='button';b.className='slot'+(B.t===m?' on':'');b.textContent=tm(m);
         b.addEventListener('click',function(){B.t=m;render()});sw.appendChild(b)})}
+    var pr=price();
+    $('bk-price').innerHTML='<span>Estimated price</span><b>'+usd(pr[0])+' \u2013 '+usd(pr[1])+'</b><small>Based on '+usd(A[B.a].rate)+'/hr with a '+usd(MINP)+' shop minimum.</small>';
     var len=firstLen(),rows=[['Artist',A[B.a].n],['Size',N.S[B.s]],['Style',N.St[B.st]],['Complexity',N.C[B.c]]];
     if(n>1)rows.push(['First session',fmtH(len)]);
     rows.push(['Date',cur?dtxt(cur):'–']);
     rows.push(['Time',B.t!==null?tm(B.t)+' – '+tm(B.t+len*60):'–']);
     $('bk-list').innerHTML=rows.map(function(r){return '<div><dt>'+r[0]+'</dt><dd>'+r[1]+'</dd></div>'}).join('');
     $('bk-go').disabled=B.t===null;
-    $('bk-fine').textContent='Demo only: nothing is actually booked. The estimate is approximate and your artist confirms the exact time.'+(n>1?' The first booking is up to 6 hrs. Further sessions are arranged with your artist.':'');
+    $('bk-fine').textContent='Demo only: nothing is actually booked. Time and price are estimates. Your artist confirms the final quote, and a '+usd(DEP)+' deposit (applied to the final price) holds your slot.'+(n>1?' The first booking is up to 6 hrs. Further sessions are arranged with your artist.':'');
     if(!$('bk-done').hidden)renderDone();
   }
   function renderDone(){if(B.t===null)return;var cur=DL.filter(function(x){return x.key===B.d})[0];if(!cur)return;
     $('bk-ref').textContent='Request GD-'+(hash(B.a+B.d+B.t)%9000+1000);
-    $('bk-dtxt').textContent=A[B.a].n+', '+dtxt(cur)+', '+tm(B.t)+' – '+tm(B.t+firstLen()*60)+' PT.';
+    $('bk-dtxt').textContent=A[B.a].n+', '+dtxt(cur)+', '+tm(B.t)+' – '+tm(B.t+firstLen()*60)+' PT. Estimated price '+usd(price()[0])+' \u2013 '+usd(price()[1])+'.';
     $('bk-dnote').textContent='This is a mockup. In the live version a confirmation arrives by text message.'}
   [['bk-s','s'],['bk-st','st'],['bk-c','c']].forEach(function(p){
     document.querySelectorAll('#'+p[0]+' .bchip').forEach(function(b){b.addEventListener('click',function(){B[p[1]]=b.dataset.v;B.t=null;render()})})});
