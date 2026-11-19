@@ -127,7 +127,7 @@ footer{padding:30px 0 40px;border-top:1px solid #3a3226;font-size:13px;color:var
 .day small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}.day b{font:700 20px var(--hd)}.day em{font-style:normal;font-size:11px;color:var(--mu)}
 .day:hover:not(:disabled){border-color:var(--go)}.day.on{background:var(--go);border-color:var(--go)}.day.on small,.day.on b,.day.on em{color:var(--ink)}
 .day:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;min-height:44px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;min-height:44px}
 .slot{background:transparent;border:1px solid #5b4521;color:var(--cr);padding:10px 0;border-radius:10px;font:600 14px var(--bd);cursor:pointer}
 .slot:hover{border-color:var(--go)}.slot.on{background:var(--rd);border-color:var(--rd);color:#fff}
 .slots .empty{grid-column:1/-1;font-size:14px;color:var(--mu);align-self:center}
