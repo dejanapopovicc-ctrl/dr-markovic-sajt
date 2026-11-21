@@ -219,7 +219,7 @@ html.reel{scroll-behavior:auto;scrollbar-width:none}html.reel::-webkit-scrollbar
 
 /* v6: video, shader, journey */
 .hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.fx{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;opacity:.95;pointer-events:none}
+.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero.gl .rings{display:none}
 .jrn{height:430vh;color:#e6efec}
 .jstick{position:sticky;top:0;height:100vh;overflow:hidden;background:#14242a}
