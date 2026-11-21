@@ -28,7 +28,7 @@ secs.forEach(function(s){to.observe(s)})}
 
 /* parallax */
 var par=$$("[data-par]"),tick=false;
-function pr(){tick=false;if(reduce||innerWidth<700)return;var h=innerHeight;par.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<-200||r.top>h+200)return;var c=r.top+r.height/2-h/2;el.style.transform="translate3d(0,"+(-c*parseFloat(el.getAttribute("data-par"))).toFixed(1)+"px,0)"})}
+function pr(){tick=false;if(reduce||innerWidth<700){par.forEach(function(el){el.style.transform=""});return}var h=innerHeight;par.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<-200||r.top>h+200)return;var c=r.top+r.height/2-h/2;el.style.transform="translate3d(0,"+(-c*parseFloat(el.getAttribute("data-par"))).toFixed(1)+"px,0)"})}
 function rq(){if(!tick){tick=true;requestAnimationFrame(pr)}}
 window.addEventListener("scroll",rq,{passive:true});window.addEventListener("resize",rq);pr();
 
