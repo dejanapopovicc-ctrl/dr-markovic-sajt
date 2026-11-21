@@ -234,3 +234,4 @@ html.reel{scroll-behavior:auto;scrollbar-width:none}html.reel::-webkit-scrollbar
 @media(prefers-reduced-motion:reduce){.jrn{height:auto}.jstick{position:relative;height:auto;padding:130px 0;display:grid;gap:20px}.jwords span{position:static;opacity:1;transform:none;filter:none;display:block;padding:0 24px;font-size:clamp(40px,9vw,90px)}.jbar,.jhint{display:none}.jbg{position:absolute}}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.r{opacity:.35}}
+.hero{-webkit-user-select:none;user-select:none}
