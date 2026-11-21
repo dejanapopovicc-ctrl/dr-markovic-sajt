@@ -217,4 +217,20 @@ html.reel{scroll-behavior:auto;scrollbar-width:none}html.reel::-webkit-scrollbar
 }
 @media(max-width:600px){.breath .h2{display:none}}
 
+/* v6: video, shader, journey */
+.hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fx{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;opacity:.95;pointer-events:none}
+.hero.gl .rings{display:none}
+.jrn{height:430vh;color:#e6efec}
+.jstick{position:sticky;top:0;height:100vh;overflow:hidden;background:#14242a}
+.jbg{position:absolute;inset:-4%;will-change:transform}
+.jbg img,.jbg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jbg video{opacity:0;transition:opacity 1.2s}.jbg video.ok{opacity:1}
+.jstick::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#14242a55 0%,#14242ab0 80%),linear-gradient(#14242a99,#14242a99);pointer-events:none}
+.jwords span{position:absolute;left:50%;top:50%;z-index:3;width:100%;padding:0 24px;text-align:center;font:200 clamp(56px,12vw,190px)/1 var(--hd);letter-spacing:-.02em;opacity:0;transform:translate(-50%,-50%);will-change:transform,opacity,filter;pointer-events:none}
+.jhint{position:absolute;z-index:3;left:0;right:0;bottom:56px;text-align:center;margin:0;font-size:15px;color:#c9dbd5;transition:opacity .6s}
+.jbar{position:absolute;z-index:3;left:50%;bottom:34px;width:120px;margin-left:-60px;height:1px;background:#ffffff30;overflow:hidden}.jbar b{position:absolute;inset:0;background:#f1cba5;transform-origin:left;transform:scaleX(0)}
+@media(max-width:900px){.jrn{height:360vh}}
+@media(prefers-reduced-motion:reduce){.jrn{height:auto}.jstick{position:relative;height:auto;padding:130px 0;display:grid;gap:20px}.jwords span{position:static;opacity:1;transform:none;filter:none;display:block;padding:0 24px;font-size:clamp(40px,9vw,90px)}.jbar,.jhint{display:none}.jbg{position:absolute}}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.r{opacity:.35}}
