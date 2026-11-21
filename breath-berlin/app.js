@@ -23,7 +23,7 @@ if(t.id==="end"){var b=$("#big");if(b)b.style.animationPlayState=st}})},{thresho
 
 /* theme switching */
 var secs=$$("[data-theme]").filter(function(e){return e.tagName==="SECTION"});
-var to=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)document.body.setAttribute("data-theme",e.target.getAttribute("data-theme"))})},{rootMargin:"-50% 0px -50% 0px"});
+var to=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)document.body.setAttribute("data-theme",e.target.getAttribute("data-theme"))})},{rootMargin:"0px 0px -92% 0px"});
 secs.forEach(function(s){to.observe(s)})}
 
 /* parallax */
