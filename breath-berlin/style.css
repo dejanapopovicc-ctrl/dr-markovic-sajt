@@ -161,9 +161,9 @@ h1>span,.big>span{display:block}.big{font-size:clamp(40px,8.4vw,128px)}
 }
 
 /* v5 */
-h1>span{animation:emerge 2.8s var(--ease) both}h1>span:nth-child(2){animation-delay:.6s}
+
 @keyframes emerge{from{opacity:0;filter:blur(18px);transform:translateY(16px)}to{opacity:1;filter:blur(0);transform:none}}
-.lead,.cta{animation:rise 1.8s var(--ease) 1.5s both}.cta{animation-delay:1.9s}
+
 @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .breath .h2{margin-left:10px;opacity:.85}
 .orb{position:absolute;left:0;top:0;width:90px;height:90px;border-radius:50%;border:1px solid #f1cba5;background:radial-gradient(circle,#f1cba530,transparent 70%);opacity:0;transition:opacity .6s;pointer-events:none;z-index:1;will-change:transform}.orb.on{opacity:.9}
